@@ -2,9 +2,15 @@
 class Tfproviderlint < Formula
   desc "Terraform Provider Linter"
   homepage "https://github.com/bflad/tfproviderlint"
-  url "https://github.com/bflad/tfproviderlint/releases/download/v0.3.0/tfproviderlint_0.3.0_darwin_amd64.tar.gz"
-  version "0.3.0"
-  sha256 "9bfdfc755d49251f7b00033d807231e7f99ff8a84cbb0c7c1473214163d7cfa7"
+  version "0.4.0"
+
+  if OS.mac?
+    url "https://github.com/bflad/tfproviderlint/releases/download/v0.4.0/tfproviderlint_0.4.0_darwin_amd64.tar.gz"
+    sha256 "9c33cfe337a0349a3c463fb00a1e890d488788c1cb4090564738af8fe0bc1c92"
+  elsif OS.linux?
+    url "https://github.com/bflad/tfproviderlint/releases/download/v0.4.0/tfproviderlint_0.4.0_linux_amd64.tar.gz"
+    sha256 "fbc7558aee0503909922cf41b8bc62914a46298ecf9066d41768d22a3caaa2cc"
+  end
   
   depends_on "go"
 
