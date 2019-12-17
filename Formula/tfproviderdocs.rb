@@ -2,16 +2,16 @@
 class Tfproviderdocs < Formula
   desc "Terraform Provider Documentation Tool"
   homepage "https://github.com/bflad/tfproviderdocs"
-  version "0.1.2"
+  version "0.2.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/bflad/tfproviderdocs/releases/download/v0.1.2/tfproviderdocs_0.1.2_darwin_amd64.tar.gz"
-    sha256 "45bef0d8c80eb42000ba58cffd4688e95af4049acfa3977492db0e295a9fedbe"
+    url "https://github.com/bflad/tfproviderdocs/releases/download/v0.2.0/tfproviderdocs_0.2.0_darwin_amd64.tar.gz"
+    sha256 "73a739d8aede173eec625bed591d25579024cee1507f53a3ca843319421eac19"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/bflad/tfproviderdocs/releases/download/v0.1.2/tfproviderdocs_0.1.2_linux_amd64.tar.gz"
-      sha256 "27c77aa29ecc598ee8c6ad4a7d466cbb0ebb6c6619b50086f5ef4245c6d75c4c"
+      url "https://github.com/bflad/tfproviderdocs/releases/download/v0.2.0/tfproviderdocs_0.2.0_linux_amd64.tar.gz"
+      sha256 "091e6f750d575e1b91efec9f41f677171fcccc61e543654c3e20f2431270b3f8"
     end
   end
   
