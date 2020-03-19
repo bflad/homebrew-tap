@@ -2,16 +2,16 @@
 class Tfproviderlint < Formula
   desc "Terraform Provider Linter"
   homepage "https://github.com/bflad/tfproviderlint"
-  version "0.11.0"
+  version "0.12.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/bflad/tfproviderlint/releases/download/v0.11.0/tfproviderlint_0.11.0_darwin_amd64.tar.gz"
-    sha256 "e1381d6a43ffde7b2e95ec4c44f29098acff7c45c14d1bd99c2c9693d063915f"
+    url "https://github.com/bflad/tfproviderlint/releases/download/v0.12.0/tfproviderlint_0.12.0_darwin_amd64.tar.gz"
+    sha256 "7581d8f5ec824ee5d4486a50d9cd1df97b46734125e0a817df21f84c9a19c35f"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/bflad/tfproviderlint/releases/download/v0.11.0/tfproviderlint_0.11.0_linux_amd64.tar.gz"
-      sha256 "b91cdd4a5b80208cbdc03bc35cff114bcb06e29a031eca405def39de6381bb08"
+      url "https://github.com/bflad/tfproviderlint/releases/download/v0.12.0/tfproviderlint_0.12.0_linux_amd64.tar.gz"
+      sha256 "97ed30c05168c81ec3fd70a5a60eaee4cd772882d776d3c2f7caea8b97dc1320"
     end
   end
   
