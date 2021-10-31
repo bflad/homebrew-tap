@@ -6,7 +6,6 @@ class Tfproviderdocs < Formula
   desc "Terraform Provider Documentation Tool"
   homepage "https://github.com/bflad/tfproviderdocs"
   version "0.9.1"
-  bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/bflad/tfproviderdocs/releases/download/v0.9.1/tfproviderdocs_0.9.1_darwin_amd64.tar.gz"

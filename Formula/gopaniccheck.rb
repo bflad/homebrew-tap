@@ -3,7 +3,6 @@ class Gopaniccheck < Formula
   desc "Go Panic Check"
   homepage "https://github.com/bflad/gopaniccheck"
   version "0.1.0"
-  bottle :unneeded
 
   if OS.mac?
     url "https://github.com/bflad/gopaniccheck/releases/download/v0.1.0/gopaniccheck_0.1.0_darwin_amd64.tar.gz"
