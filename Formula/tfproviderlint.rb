@@ -6,7 +6,6 @@ class Tfproviderlint < Formula
   desc "Terraform Provider Linter"
   homepage "https://github.com/bflad/tfproviderlint"
   version "0.27.1"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
