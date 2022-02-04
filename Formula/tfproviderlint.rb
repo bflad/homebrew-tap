@@ -5,12 +5,12 @@
 class Tfproviderlint < Formula
   desc "Terraform Provider Linter"
   homepage "https://github.com/bflad/tfproviderlint"
-  version "0.28.0"
+  version "0.28.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/bflad/tfproviderlint/releases/download/v0.28.0/tfproviderlint_0.28.0_darwin_amd64.tar.gz"
-      sha256 "b91d209e6e7270bcd6af9d34621a8daeb05c66b89382b7da03b5bd4f9e20ae0d"
+      url "https://github.com/bflad/tfproviderlint/releases/download/v0.28.1/tfproviderlint_0.28.1_darwin_amd64.tar.gz"
+      sha256 "d8bf144122e0bf56b3e57c0298fe9b0e7c4e08fcf655750cde9c0edc058d9d4a"
 
       def install
         bin.install "tfproviderlint"
@@ -20,8 +20,8 @@ class Tfproviderlint < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/bflad/tfproviderlint/releases/download/v0.28.0/tfproviderlint_0.28.0_linux_amd64.tar.gz"
-      sha256 "1e783ca118a3b6971c490265616d3a9fb87dc53375e0392903e14250fdec826a"
+      url "https://github.com/bflad/tfproviderlint/releases/download/v0.28.1/tfproviderlint_0.28.1_linux_amd64.tar.gz"
+      sha256 "5f715c2f68b7a430eada0a8392566a5d02d65889c92ab5c169a809bd0d370cb6"
 
       def install
         bin.install "tfproviderlint"
