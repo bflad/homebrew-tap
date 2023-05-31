@@ -5,21 +5,46 @@
 class Tfproviderdocs < Formula
   desc "Terraform Provider Documentation Tool"
   homepage "https://github.com/bflad/tfproviderdocs"
-  version "0.9.1"
-
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/bflad/tfproviderdocs/releases/download/v0.9.1/tfproviderdocs_0.9.1_darwin_amd64.tar.gz"
-    sha256 "34853314952b459ca1792aff9e9dd64ce1ac4990ea3c017336efaef370a075d1"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/bflad/tfproviderdocs/releases/download/v0.9.1/tfproviderdocs_0.9.1_linux_amd64.tar.gz"
-    sha256 "ce6cef93966d3bd72bf4b8eea892f313241d3b7a9c9cf6fdd72fa952e0e0e0db"
-  end
+  version "0.10.0"
 
   depends_on "go"
 
-  def install
-    bin.install "tfproviderdocs"
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/bflad/tfproviderdocs/releases/download/v0.10.0/tfproviderdocs_0.10.0_darwin_arm64.tar.gz"
+      sha256 "379231d33b2692004d641177aba629afd75ba71cb50aa246b403a4d8fcdd1a36"
+
+      def install
+        bin.install "tfproviderdocs"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/bflad/tfproviderdocs/releases/download/v0.10.0/tfproviderdocs_0.10.0_darwin_amd64.tar.gz"
+      sha256 "16c8ffbb4173eca3c9ed1a946b8df942b06b3cdd83ef0b9da60af9321eeab003"
+
+      def install
+        bin.install "tfproviderdocs"
+      end
+    end
+  end
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/bflad/tfproviderdocs/releases/download/v0.10.0/tfproviderdocs_0.10.0_linux_amd64.tar.gz"
+      sha256 "e3412ab3bf01aebe5ef5440354607532674659ac77eb4d72bc0d6283d6172d41"
+
+      def install
+        bin.install "tfproviderdocs"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/bflad/tfproviderdocs/releases/download/v0.10.0/tfproviderdocs_0.10.0_linux_arm64.tar.gz"
+      sha256 "8bedcb2f7ea7eba2c8dc928233ae6b4fd2cc97e9feda7c040346de951550b671"
+
+      def install
+        bin.install "tfproviderdocs"
+      end
+    end
   end
 
   test do
