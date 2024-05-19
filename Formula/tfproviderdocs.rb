@@ -5,22 +5,22 @@
 class Tfproviderdocs < Formula
   desc "Terraform Provider Documentation Tool"
   homepage "https://github.com/bflad/tfproviderdocs"
-  version "0.12.0"
+  version "0.12.1"
 
   depends_on "go"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/bflad/tfproviderdocs/releases/download/v0.12.0/tfproviderdocs_0.12.0_darwin_amd64.tar.gz"
-      sha256 "1491045391e95091ae86f4d2293220d42c17c7981b71d78de27956207513ceb4"
+    on_intel do
+      url "https://github.com/bflad/tfproviderdocs/releases/download/v0.12.1/tfproviderdocs_0.12.1_darwin_amd64.tar.gz"
+      sha256 "52244cc95d800af1e21a6930df20a2e2996a56494b5a8da4c8a03c4e82276f58"
 
       def install
         bin.install "tfproviderdocs"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/bflad/tfproviderdocs/releases/download/v0.12.0/tfproviderdocs_0.12.0_darwin_arm64.tar.gz"
-      sha256 "e7063def18355be1a7ed69671b9d7efa801c492915c5c41fa0491ba589716ed7"
+    on_arm do
+      url "https://github.com/bflad/tfproviderdocs/releases/download/v0.12.1/tfproviderdocs_0.12.1_darwin_arm64.tar.gz"
+      sha256 "3c40e99c6b59f2e787e756c5276c38aac812901b8c05c3bebca418edccd0a4b3"
 
       def install
         bin.install "tfproviderdocs"
@@ -29,20 +29,24 @@ class Tfproviderdocs < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/bflad/tfproviderdocs/releases/download/v0.12.0/tfproviderdocs_0.12.0_linux_arm64.tar.gz"
-      sha256 "85aa734ce177b0047e410c67ac82a05b5d8acf907176f45d70ff42642507590c"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/bflad/tfproviderdocs/releases/download/v0.12.1/tfproviderdocs_0.12.1_linux_amd64.tar.gz"
+        sha256 "187740d17491e354785a4afa28c072cfedb09a9dea6e628388de80a718241441"
 
-      def install
-        bin.install "tfproviderdocs"
+        def install
+          bin.install "tfproviderdocs"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/bflad/tfproviderdocs/releases/download/v0.12.0/tfproviderdocs_0.12.0_linux_amd64.tar.gz"
-      sha256 "7b6c14755dbfdde537540dd2f24bbaafe5ffce0b889ba4e3f1d4fb23760b239c"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/bflad/tfproviderdocs/releases/download/v0.12.1/tfproviderdocs_0.12.1_linux_arm64.tar.gz"
+        sha256 "c5e06f38ec20d24edde3898fdf503f743ccc45bb942cd97dda0711959169cfe2"
 
-      def install
-        bin.install "tfproviderdocs"
+        def install
+          bin.install "tfproviderdocs"
+        end
       end
     end
   end
