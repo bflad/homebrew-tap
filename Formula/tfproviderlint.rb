@@ -5,22 +5,22 @@
 class Tfproviderlint < Formula
   desc "Terraform Provider Linter"
   homepage "https://github.com/bflad/tfproviderlint"
-  version "0.30.0"
+  version "0.31.0"
 
   depends_on "go"
 
   on_macos do
-    on_intel do
-      url "https://github.com/bflad/tfproviderlint/releases/download/v0.30.0/tfproviderlint_0.30.0_darwin_amd64.tar.gz"
-      sha256 "45935a5f4a18063a25a9e363672cf5da312ca36c2d6d054e55653b65f6e1c37b"
+    if Hardware::CPU.intel?
+      url "https://github.com/bflad/tfproviderlint/releases/download/v0.31.0/tfproviderlint_0.31.0_darwin_amd64.tar.gz"
+      sha256 "7a943ec7f1ead8b7ea6ac95c40f93f5d410c56bea7bd78cba9c8b354aba0471b"
 
       def install
         bin.install "tfproviderlint"
       end
     end
-    on_arm do
-      url "https://github.com/bflad/tfproviderlint/releases/download/v0.30.0/tfproviderlint_0.30.0_darwin_arm64.tar.gz"
-      sha256 "3acec565d3c67c2d989da14dc18d30ac4a8e0d5bd1b6415c16516186668a59b0"
+    if Hardware::CPU.arm?
+      url "https://github.com/bflad/tfproviderlint/releases/download/v0.31.0/tfproviderlint_0.31.0_darwin_arm64.tar.gz"
+      sha256 "0327f53b61b75c64fdcba91bbbe973e06a34453cb86014984fce19b3be6f4d36"
 
       def install
         bin.install "tfproviderlint"
@@ -29,20 +29,20 @@ class Tfproviderlint < Formula
   end
 
   on_linux do
-    on_intel do
+    if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/bflad/tfproviderlint/releases/download/v0.30.0/tfproviderlint_0.30.0_linux_amd64.tar.gz"
-        sha256 "fa715c580a8b48aa07628865cec84ac577407d23d9c9fa66db18a3fd20db1164"
+        url "https://github.com/bflad/tfproviderlint/releases/download/v0.31.0/tfproviderlint_0.31.0_linux_amd64.tar.gz"
+        sha256 "fc42b3a024628c5a2b63824a6f53ab3ad3e4274756249a9339c736bdfced1b51"
 
         def install
           bin.install "tfproviderlint"
         end
       end
     end
-    on_arm do
+    if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/bflad/tfproviderlint/releases/download/v0.30.0/tfproviderlint_0.30.0_linux_arm64.tar.gz"
-        sha256 "4d757a4f0e3f9b4ea591475e79e9dc9aa6553f9472942b17c4b3a21b168c4489"
+        url "https://github.com/bflad/tfproviderlint/releases/download/v0.31.0/tfproviderlint_0.31.0_linux_arm64.tar.gz"
+        sha256 "3925be5f092c1bed526b15bf1a1eb2690ab7c75c1161a54d2e9537bf1a8fccac"
 
         def install
           bin.install "tfproviderlint"
